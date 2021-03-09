@@ -13,3 +13,8 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+/*Acction listener Boton de prueba*/
+void MainWindow::on_pushButton_released()
+{
+
+}

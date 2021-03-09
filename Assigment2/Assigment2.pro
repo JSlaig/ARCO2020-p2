@@ -10,10 +10,12 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    vehicle.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    vehicle.h
 
 FORMS += \
     mainwindow.ui
