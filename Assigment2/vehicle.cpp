@@ -1,10 +1,8 @@
 #include "vehicle.h"
 #include"iostream"
 
-Vehicle::Vehicle(int nWheels){
-
-Vehicle::nWheels = nWheels;
-
+Vehicle::Vehicle(int num){
+int prueba = num;
 }
 
 Vehicle::Vehicle(std::string type,std::string name,int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,int wagon,bool spareWheel,std::string registration){

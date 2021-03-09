@@ -7,7 +7,7 @@ class Vehicle
 {
 public:
 
-    Vehicle(int nWheels);
+    Vehicle(int num);
     Vehicle(std::string type,std::string name,int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,int wagon,bool spareWheel,std::string registration);
 
     /*vehicle::name = name;
