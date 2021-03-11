@@ -21,15 +21,14 @@ private slots:
 
     void on_pushButton_released();
 
-    void on_buttonLocomotora_released();
+    void on_BotonPrueba_clicked();
 
-    void on_buttonTrenAterrizaje_released();
 
-    void on_buttonVagones_released();
+    void on_checkBox_Locomotora_toggled(bool checked);
 
-    void on_lineEditnumVagones_editingFinished();
+    void on_checkBox_Vagones_toggled(bool checked);
 
-    void on_buttonTrenAterrizaje_clicked(bool checked);
+    void on_checkBox_TrenAterrizaje_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;

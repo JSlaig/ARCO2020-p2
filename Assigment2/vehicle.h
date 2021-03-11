@@ -8,7 +8,7 @@ class Vehicle
 public:
 
     Vehicle(int num);
-    Vehicle(std::string type,std::string name,int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,int wagon,bool spareWheel,std::string registration);
+    Vehicle(std::string type,std::string name,int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,bool wagon,int numWagon,bool spareWheel,std::string registration);
 
     /*vehicle::name = name;
     vehicle::nWheels = nWheels;
@@ -40,7 +40,8 @@ private:
     bool reactor;
     bool undercarriage;
     bool locomotive;
-    int wagon;
+    bool wagon;
+    int numWagon;
     bool spareWheel;
     std::string registration;
 

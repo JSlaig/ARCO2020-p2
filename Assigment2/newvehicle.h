@@ -10,7 +10,8 @@ public:
     newVehicle();
     void setUndercarriage(bool undercarriage);
     void setLocomotive(bool locomotive);
-    void setWagon(int numWagon);
+    void setWagon(bool wagon);
+    void setNumWagon(int numWagon);
     void addVehicle();
 
 private:
@@ -27,7 +28,8 @@ private:
     bool reactor;
     bool undercarriage;
     bool locomotive;
-    int wagon;
+    bool wagon;
+    int numWagon;
     bool spareWheel;
     std::string registration;
 

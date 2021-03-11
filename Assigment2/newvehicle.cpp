@@ -18,8 +18,11 @@ void newVehicle::setUndercarriage(bool undercarriage){
 void newVehicle::setLocomotive(bool locomotive){
     newVehicle::locomotive = locomotive;
 }
-void newVehicle::setWagon(int numWagon){
-    newVehicle::wagon = numWagon;
+void newVehicle::setWagon(bool wagon){
+    newVehicle::wagon = wagon;
+}
+void newVehicle::setNumWagon(int numWagon){
+    newVehicle::numWagon = numWagon;
 }
 
 
