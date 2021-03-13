@@ -5,9 +5,9 @@ Vehicle::Vehicle(int num){
 int prueba = num;
 }
 
-Vehicle::Vehicle(std::string type,std::string name,int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,bool wagon,int numWagon,bool spareWheel,std::string registration){
+Vehicle::Vehicle(std::string name,int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,bool wagon,int numWagon,bool spareWheel,std::string registration){
 
-Vehicle::type = type;
+
 Vehicle::name = name;
 Vehicle::nWheels = nWheels;
 Vehicle::engine = engine;
@@ -23,5 +23,38 @@ Vehicle::wagon = wagon;
 Vehicle::numWagon = numWagon;
 Vehicle:: spareWheel = spareWheel;
 Vehicle::registration = registration;
+  
+  if(isASportsCar(nWheels, engine, engineCV, fuel, fuelType, wings, reactor, undercarriage, locomotive, wagon, spareWheel) == true){
+          Vehicle::type = "sportscar";
+  }else if(isAPlane(nWheels, engine, engineCV, fuel, fuelType, color, wings, reactor, undercarriage, locomotive, wagon, spareWheel) == true){
+          Vehicle::type = "plane";
+  }else{
+          //Caso de mostrar alerta(se puede comprobar el tipo del objeto y si es este crear la ventana y borrar el obj por ejemplo)
+          Vehicle::type = "Wrong type";
+  }
 
+}
+
+bool Vehicle::isASportsCar(int wheels, bool engine, int enginePower, bool fuel, string fuelType, bool wings, bool reactor, bool landingGear, bool locomotive, int wagons, bool kit){
+    if(wheels == 4 && engine == true && fuel == true && wings == false && reactor == false && landingGear == false && locomotive == false && wagons == 0 && kit == false){
+        if(enginePower >= 250 && enginePower <= 450 && (fuelType.compare("Electrico") == 0 || fuelType.compare("Gasolina") == 0)){
+            return true;
+        }else{
+            return false;
+        }
+    }else{
+        return false;
+    }
+}
+
+bool Vehicle::isAPlane(int wheels, bool engine, int enginePower, bool fuel, string fuelType, string color, bool wings, bool reactor, bool landingGear, bool locomotive, int wagons, bool kit){
+    if(wheels == 6 && engine == true && fuel == true && color.compare("Blanco") == 0 && wings == true && reactor == true && landingGear == true && locomotive == false && wagons == 0 && kit == true){
+        if(enginePower == 450 && fuelType.compare("Queroseno") == 0){
+            return true;
+        }else{
+            return false;
+        }
+    }else{
+        return false;
+    }
 }
