@@ -10,6 +10,7 @@ public:
     Vehicle(int num);
     Vehicle(std::string type,std::string name,int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,bool wagon,int numWagon,bool spareWheel,std::string registration);
 
+    //Esto para que es?? No deberia ser en el cpp?    
     /*vehicle::name = name;
     vehicle::nWheels = nWheels;
     vehicle::engine = engine;
@@ -24,6 +25,24 @@ public:
     vehicle::wagon = wagon;
     vehicle:: spareWheel = spareWheel;
     vehicle::registration = registration;*/
+    
+    
+    std::string getName();
+    std::string getType();
+    std::string getNWheels();
+    std::string getEngine();
+    std::string getEngineCV();
+    std::string getFuel();
+    std::string getFuelType();
+    std::string getColor();
+    std::string getWings();
+    std::string getReactor();
+    std::string getUndercarriage();
+    std::string getLocomotive();
+    std::string getWagon();
+    std::string getSpareWheel();
+    std::string getRegistration();    
+    
 
 
 private:
