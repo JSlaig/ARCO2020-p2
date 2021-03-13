@@ -37,7 +37,7 @@ Vehicle::registration = registration;
 
 bool Vehicle::isASportsCar(int wheels, bool engine, int enginePower, bool fuel, string fuelType, bool wings, bool reactor, bool landingGear, bool locomotive, int wagons, bool kit){
     if(wheels == 4 && engine == true && fuel == true && wings == false && reactor == false && landingGear == false && locomotive == false && wagons == 0 && kit == false){
-        if(enginePower >= 250 && enginePower <= 450 && (fuelType.compare("Electrico") == 0 || fuelType.compare("Gasolina") == 0)){
+        if(enginePower >= 250 && enginePower <= 450 && (fuelType.compare("Electric") == 0 || fuelType.compare("Gasoline") == 0)){
             return true;
         }else{
             return false;
@@ -48,8 +48,8 @@ bool Vehicle::isASportsCar(int wheels, bool engine, int enginePower, bool fuel, 
 }
 
 bool Vehicle::isAPlane(int wheels, bool engine, int enginePower, bool fuel, string fuelType, string color, bool wings, bool reactor, bool landingGear, bool locomotive, int wagons, bool kit){
-    if(wheels == 6 && engine == true && fuel == true && color.compare("Blanco") == 0 && wings == true && reactor == true && landingGear == true && locomotive == false && wagons == 0 && kit == true){
-        if(enginePower == 450 && fuelType.compare("Queroseno") == 0){
+    if(wheels == 6 && engine == true && fuel == true && color.compare("White") == 0 && wings == true && reactor == true && landingGear == true && locomotive == false && wagons == 0 && kit == true){
+        if(enginePower == 450 && fuelType.compare("Querosene") == 0){
             return true;
         }else{
             return false;
