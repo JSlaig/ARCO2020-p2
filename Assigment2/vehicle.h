@@ -9,8 +9,7 @@ public:
 
     Vehicle(int num);
     Vehicle(std::string type,std::string name,int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,bool wagon,int numWagon,bool spareWheel,std::string registration);
-
-    //Esto para que es?? No deberia ser en el cpp?    
+ 
     /*vehicle::name = name;
     vehicle::nWheels = nWheels;
     vehicle::engine = engine;
@@ -24,9 +23,9 @@ public:
     vehicle::locomotive = locomotive;
     vehicle::wagon = wagon;
     vehicle:: spareWheel = spareWheel;
-    vehicle::registration = registration;*/
+    vehicle::registration = registration;*/    
     
-    
+    //Metodos Getter
     std::string getName();
     std::string getType();
     std::string getNWheels();
@@ -42,6 +41,9 @@ public:
     std::string getWagon();
     std::string getSpareWheel();
     std::string getRegistration();    
+    
+    bool isASportsCar(int, bool, int, bool, string, bool, bool, bool, bool, int, bool);
+    bool isAPlane(int, bool, int, bool, string, string, bool, bool, bool, bool, int, bool);
     
 
 
