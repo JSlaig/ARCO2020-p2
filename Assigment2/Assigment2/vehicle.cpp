@@ -1,8 +1,8 @@
 #include "vehicle.h"
 #include"iostream"
 
-Vehicle::Vehicle(int num){
-int prueba = num;
+Vehicle::Vehicle(){
+//int prueba = num;
 }
 
 Vehicle::Vehicle(std::string name,int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,bool wagon,int numWagon,bool spareWheel,std::string registration){
@@ -28,7 +28,15 @@ Vehicle::registration = registration;
           Vehicle::type = "sportscar";
   }else if(isAPlane(nWheels, engine, engineCV, fuel, fuelType, color, wings, reactor, undercarriage, locomotive, wagon, spareWheel) == true){
           Vehicle::type = "plane";
-  }else{
+  }else if (isABike(nWheels,engine,fuel,wings,reactor,locomotive,wagon,spareWheel)){
+    Vehicle::type = "Bike";
+  } else if (isTricycle(nWheels,engine,fuel,reactor,wings,undercarriage,locomotive,wagon,spareWheel)){
+      Vehicle::type = "Tricycle";
+  }
+  
+  
+  
+  else{
           //Caso de mostrar alerta(se puede comprobar el tipo del objeto y si es este crear la ventana y borrar el obj por ejemplo)
           Vehicle::type = "Wrong type";
   }
@@ -57,4 +65,30 @@ bool Vehicle::isAPlane(int wheels, bool engine, int enginePower, bool fuel, stri
     }else{
         return false;
     }
+}
+
+bool Vehicle::isABike(int wheels,bool engine,bool fuel,bool wings,bool reactors,bool locomotive,int wagons,bool kit){
+    if (wheels ==2 && engine == false && fuel == false && wings == false && reactors == false && locomotive == false && wagons == 0 && kit ==true){
+        return true;
+    } else {
+        return false;
+    }
+}
+
+bool Vehicle::isTricycle(int wheels,bool engine, bool fuel,bool reactor,bool wings,bool undercarriage,bool locomotive,int wagons,bool kit){
+    if (wheels = 3 && engine == false && fuel == false && wings == false && reactor == false && undercarriage == false && locomotive == false && wagons == 0 && kit == false){
+        return true;
+    } else {
+        return false;
+    }
+}
+std::string Vehicle::getColor(){
+    return Vehicle::color;
+}
+
+bool Vehicle::getWings(){
+    return Vehicle::wings;
+}
+bool Vehicle::getReactor(){
+    return Vehicle::reactor;
 }
