@@ -124,25 +124,12 @@
      <string>Combustible</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_Electrico">
+   <widget class="QCheckBox" name="checkBox_Gasolina">
     <property name="geometry">
      <rect>
       <x>70</x>
       <y>200</y>
-      <width>82</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Electrico</string>
-    </property>
-   </widget>
-   <widget class="QRadioButton" name="radioButton_Gasolina">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>220</y>
-      <width>82</width>
+      <width>70</width>
       <height>17</height>
      </rect>
     </property>
@@ -150,25 +137,38 @@
      <string>Gasolina</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_Diesel">
+   <widget class="QCheckBox" name="checkBox_Diesel">
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>240</y>
-      <width>82</width>
+      <y>220</y>
+      <width>70</width>
       <height>17</height>
      </rect>
     </property>
     <property name="text">
-     <string>Diésel</string>
+     <string>Diesel</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_Hibrido">
+   <widget class="QCheckBox" name="checkBox_Electrico">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>240</y>
+      <width>70</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Eléctrico</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_Hibrido">
     <property name="geometry">
      <rect>
       <x>70</x>
       <y>260</y>
-      <width>82</width>
+      <width>70</width>
       <height>17</height>
      </rect>
     </property>
@@ -176,12 +176,12 @@
      <string>Híbrido</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_Queroseno">
+   <widget class="QCheckBox" name="checkBox_Queroseno">
     <property name="geometry">
      <rect>
       <x>70</x>
       <y>280</y>
-      <width>82</width>
+      <width>81</width>
       <height>17</height>
      </rect>
     </property>

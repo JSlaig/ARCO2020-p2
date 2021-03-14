@@ -27,7 +27,9 @@ void newVehicle::setNumWagon(int numWagon){
 void newVehicle::setFuel(bool fuel){
     newVehicle::fuel = fuel;
 }
-
+void newVehicle::setFuelType(char fuelType){
+    newVehicle::fuelType = fuelType;
+}
 void newVehicle::addVehicle(){
 
      /*Creacion de nuevo vehiculo*/

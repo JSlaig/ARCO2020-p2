@@ -31,6 +31,8 @@ private slots:
 
     void on_checkBox_Combustible_toggled(bool checked);
 
+    void on_checkBox_Gasolina_toggled(bool checked);
+
     void on_label_windowIconTextChanged(const QString &iconText);
 
 

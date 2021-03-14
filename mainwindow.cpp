@@ -88,21 +88,38 @@ void MainWindow::on_checkBox_TrenAterrizaje_toggled(bool checked)
 void MainWindow::on_checkBox_Combustible_toggled(bool checked)
 {
     if(checked){
-        std::cout << "Tren aterrizaje seteadao como true" << std::endl;
+        std::cout << "Combustible seteadao como true" << std::endl;
         newVehicle.setFuel(true);
-        ui->radioButton_Gasolina->setDisabled(false);
-        ui->radioButton_Diesel->setDisabled(false);
-        ui->radioButton_Electrico->setDisabled(false);
-        ui->radioButton_Hibrido->setDisabled(false);
-        ui->radioButton_Queroseno->setDisabled(false);
+        ui->checkBox_Gasolina->setDisabled(false);
+        ui->checkBox_Diesel->setDisabled(false);
+        ui->checkBox_Electrico->setDisabled(false);
+        ui->checkBox_Hibrido->setDisabled(false);
+        ui->checkBox_Queroseno->setDisabled(false);
     }else{
 
-        std::cout << "Tren aterrizaje seteado como false" << std::endl;
+        std::cout << "Combustible seteado como false" << std::endl;
         newVehicle.setFuel(false);
-        ui->radioButton_Gasolina->setDisabled(true);
-        ui->radioButton_Diesel->setDisabled(true);
-        ui->radioButton_Electrico->setDisabled(true);
-        ui->radioButton_Hibrido->setDisabled(true);
-        ui->radioButton_Queroseno->setDisabled(true);
+        ui->checkBox_Gasolina->setDisabled(true);
+        ui->checkBox_Diesel->setDisabled(true);
+        ui->checkBox_Electrico->setDisabled(true);
+        ui->checkBox_Hibrido->setDisabled(true);
+        ui->checkBox_Queroseno->setDisabled(true);
+    }
+
+}
+
+void MainWindow::on_checkBox_Gasolina_toggled(bool checked)
+{
+    if(checked){
+        std::cout << "Tipo de combustible seteado a gasolina" << std::endl;
+        ui->checkBox_Diesel->setChecked(false);
+        ui->checkBox_Electrico->setChecked(false);
+        ui->checkBox_Hibrido->setChecked(false);
+        ui->checkBox_Queroseno->setChecked(false);
+        newVehicle.setFuelType('G');
+    }else{
+        std::cout << "Tipo de combustible no seteado a gasolina" << std::endl;
+        newVehicle.setFuelType('N');
     }
 }
+

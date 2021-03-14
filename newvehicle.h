@@ -13,6 +13,7 @@ public:
     void setWagon(bool wagon);
     void setNumWagon(int numWagon);
     void setFuel(bool fuel);
+    void setFuelType(char fuelType);
     void addVehicle();
 
 private:
