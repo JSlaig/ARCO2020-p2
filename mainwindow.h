@@ -16,6 +16,8 @@ public:
 
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void fillComboBox();
+    void resetWindow();
 
 private slots:
 
@@ -30,8 +32,14 @@ private slots:
 
     void on_checkBox_TrenAterrizaje_toggled(bool checked);
 
+    void on_pushButton_createVehicle_clicked();
+
+    void on_checkBox_Reactors_clicked();
+
 private:
     Ui::MainWindow *ui;
     newVehicle newVehicle;
+     Vehicle vehicle;
+    std::vector<Vehicle> listaVehiculos;
 };
 #endif // MAINWINDOW_H

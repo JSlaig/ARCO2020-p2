@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="BotonPrueba">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>490</y>
+      <x>530</x>
+      <y>430</y>
       <width>80</width>
       <height>25</height>
      </rect>
@@ -30,8 +30,8 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>660</x>
-      <y>530</y>
+      <x>650</x>
+      <y>450</y>
       <width>80</width>
       <height>25</height>
      </rect>
@@ -43,7 +43,7 @@
    <widget class="QLineEdit" name="lineEditnumVagones">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>670</x>
       <y>390</y>
       <width>31</width>
       <height>24</height>
@@ -53,7 +53,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>540</x>
       <y>390</y>
       <width>131</width>
       <height>21</height>
@@ -69,10 +69,10 @@
      <string>Nº de vagones</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox_Locomotora">
+   <widget class="QCheckBox" name="checkBox_Locomotive">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>300</x>
       <y>330</y>
       <width>101</width>
       <height>22</height>
@@ -82,23 +82,23 @@
      <string>Locomotora</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox_TrenAterrizaje">
+   <widget class="QCheckBox" name="checkBox_Undercarriage">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>300</y>
+      <x>300</x>
+      <y>290</y>
       <width>131</width>
-      <height>22</height>
+      <height>30</height>
      </rect>
     </property>
     <property name="text">
      <string>Tren de aterrizaje</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox_Vagones">
+   <widget class="QCheckBox" name="checkBox_wagons">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>540</x>
       <y>360</y>
       <width>83</width>
       <height>22</height>
@@ -106,6 +106,265 @@
     </property>
     <property name="text">
      <string>Vagones</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LabelTitle">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>10</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+      <underline>true</underline>
+     </font>
+    </property>
+    <property name="text">
+     <string>Put a vehicle</string>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LabelTitle_8">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>250</y>
+      <width>211</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="text">
+     <string>Colour</string>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LabelTitle_9">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>280</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="text">
+     <string>Wings</string>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_Colour">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>250</y>
+      <width>499</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>White</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Black</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Red</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Blue</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Yellow</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Green</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_Wings">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>289</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>It has Wings</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LabelTitle_10">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>320</y>
+      <width>231</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="text">
+     <string>Reactors</string>
+    </property>
+    <property name="scaledContents">
+     <bool>false</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="vehiculosCreados_lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>530</y>
+      <width>131</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_createVehicle">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>470</y>
+      <width>141</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Create a vehicle</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_recoverVehicle">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>470</y>
+      <width>141</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>recover a vehicle</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_19">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>530</y>
+      <width>161</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Nº de vehiculos creados</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox_listVehicles">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>530</y>
+      <width>200</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_20">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>530</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Choose a vehicle</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="checkBox_Reactor">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>330</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>It has Reactor</string>
     </property>
    </widget>
   </widget>

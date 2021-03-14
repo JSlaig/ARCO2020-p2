@@ -8,8 +8,8 @@
 Vehicle::Vehicle(){
 //int prueba = num;
 }
-Vehicle::Vehicle(int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,bool wagon,int numWagon,bool spareWheel,std::string registration){
-//Vehicle::name = name;
+Vehicle::Vehicle(std::string name,int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,bool wagon,int numWagon,bool spareWheel,std::string registration){
+Vehicle::name = name;
 Vehicle::nWheels = nWheels;
 Vehicle::engine = engine;
 Vehicle::engineCV = engineCV;
@@ -84,6 +84,9 @@ bool Vehicle::isTricycle(int wheels,bool engine, bool fuel,bool reactor,bool win
 }
 std::string Vehicle::getColor(){
     return Vehicle::color;
+}
+std::string Vehicle::getName(){
+    return Vehicle::name;
 }
 bool Vehicle::getWings(){
     return Vehicle::wings;
