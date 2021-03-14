@@ -43,8 +43,8 @@ public:
     std::string getSpareWheel();
     std::string getRegistration();    
     
-    bool isASportsCar(int, bool, int, bool, string, bool, bool, bool, bool, int, bool);
-    bool isAPlane(int, bool, int, bool, string, string, bool, bool, bool, bool, int, bool);
+    bool isASportsCar(int, bool, int, bool, std::string, bool, bool, bool, bool, int, bool);
+    bool isAPlane(int, bool, int, bool, std::string, std::string, bool, bool, bool, bool, int, bool);
     bool isABike(int,bool,bool,bool,bool,bool,int,bool);
     bool isTricycle(int,bool, bool,bool,bool,bool,bool,int,bool);
     
