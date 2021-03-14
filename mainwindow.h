@@ -32,6 +32,8 @@ private slots:
 
     void on_checkBox_TrenAterrizaje_toggled(bool checked);
 
+    void on_checkBox_Combustible_toggled(bool checked);
+
     void on_pushButton_createVehicle_clicked();
 
     void on_checkBox_Reactors_clicked();

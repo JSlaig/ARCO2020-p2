@@ -12,6 +12,8 @@ public:
     void setLocomotive(bool locomotive);
     void setWagon(bool wagon);
     void setNumWagon(int numWagon);
+    void setFuel(bool fuel);
+    void setFuelType(std::string fuelType);
     void addVehicle();
 
 private:
@@ -22,7 +24,7 @@ private:
     bool engine;
     int engineCV;
     bool fuel;
-    char fuelType;
+    std::string fuelType;
     std::string color;
     bool wings;
     bool reactor;

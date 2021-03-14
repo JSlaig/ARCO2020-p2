@@ -123,3 +123,14 @@ void MainWindow::on_checkBox_Reactors_clicked()
 {
 
 }
+
+void MainWindow::on_checkBox_Combustible_toggled(bool checked)
+{
+    if(checked){
+        ui->comboBox_Combustible->setEnabled(true);
+        newVehicle.setFuel(true);
+    }else{
+        ui->comboBox_Combustible->setEnabled(false);
+        newVehicle.setFuel(false);
+    }
+}

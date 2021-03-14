@@ -82,6 +82,13 @@ bool Vehicle::isTricycle(int wheels,bool engine, bool fuel,bool reactor,bool win
         return false;
     }
 }
+bool Vehicle::isTrain(){
+    if(Vehicle::nWheels==40&&Vehicle::engineCV==450&&(Vehicle::fuelType == 'e'||Vehicle::fuelType == 'd')&&Vehicle::color.compare("Black")&&Vehicle::wings == false&&Vehicle::reactor == false && Vehicle::undercarriage == false && Vehicle::locomotive == true && (Vehicle::numWagon>=5&&Vehicle::numWagon<=20) && Vehicle::spareWheel){
+        return true;
+    }else{
+        return false;
+    }
+}
 std::string Vehicle::getColor(){
     return Vehicle::color;
 }

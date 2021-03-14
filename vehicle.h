@@ -44,6 +44,7 @@ public:
     bool isAPlane(int, bool, int, bool, char, std::string, bool, bool, bool, bool, int, bool);
     bool isABike(int,bool,bool,bool,bool,bool,int,bool);
     bool isTricycle(int,bool, bool,bool,bool,bool,bool,int,bool);
+    bool isTrain();
     void IncorrectInformation(); // informacion erronea
     std::string makeRegistration(); // matricula
 

@@ -24,7 +24,13 @@ void newVehicle::setWagon(bool wagon){
 void newVehicle::setNumWagon(int numWagon){
     newVehicle::numWagon = numWagon;
 }
-
+void newVehicle::setFuel(bool fuel){
+    newVehicle::fuel = fuel;
+}
+void newVehicle::setFuelType(std::string fuelType){
+    newVehicle::fuelType = fuelType;
+    std::cout << fuelType << std::endl;
+}
 
 void newVehicle::addVehicle(){
 
