@@ -1,3 +1,6 @@
+#include "vehicle.h"
+#include "string"
+
 Vehicle::Vehicle(){
 //int prueba = num;
 }

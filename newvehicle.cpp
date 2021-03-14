@@ -32,7 +32,7 @@ void newVehicle::addVehicle(){
     /*La idea es que desde mainWindow.cpp se llame a esta clase, que sera el enlace entre intefaz & vehicle.cpp
     que sera la clase que crea el vehiculo como tal*/
 
-    Vehicle vehicle(1);
+   // Vehicle vehicle();
     //vehicles.push_back(Vehicle vehicle("Informacion"));
 
 }

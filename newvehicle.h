@@ -19,7 +19,16 @@ private:
     std::string type;
     std::string name;
     int nWheels;
-	@@ -32,7 +62,5 @@ class newVehicle
+    bool engine;
+    int engineCV;
+    bool fuel;
+    char fuelType;
+    std::string color;
+    bool wings;
+    bool reactor;
+    bool undercarriage;
+    bool locomotive;
+    bool wagon;
     int numWagon;
     bool spareWheel;
     std::string registration;
