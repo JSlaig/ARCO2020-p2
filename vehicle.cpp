@@ -39,7 +39,8 @@ Vehicle::registration = registration;
   
   else{
           //Caso de mostrar alerta(se puede comprobar el tipo del objeto y si es este crear la ventana y borrar el obj por ejemplo)
-          Vehicle::type = "Wrong type";
+         //Vehicle::type = "Wrong type";
+         IncorrectInformation();
   }
 
 }
