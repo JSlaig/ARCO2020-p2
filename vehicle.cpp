@@ -1,11 +1,15 @@
 #include "vehicle.h"
-#include "string"
+#include"iostream"
+#include<string>
+
+#include <QMessageBox>
+
 
 Vehicle::Vehicle(){
 //int prueba = num;
 }
-Vehicle::Vehicle(std::string name,int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,bool wagon,int numWagon,bool spareWheel,std::string registration){
-Vehicle::name = name;
+Vehicle::Vehicle(int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,bool wagon,int numWagon,bool spareWheel,std::string registration){
+//Vehicle::name = name;
 Vehicle::nWheels = nWheels;
 Vehicle::engine = engine;
 Vehicle::engineCV = engineCV;
@@ -71,7 +75,7 @@ bool Vehicle::isABike(int wheels,bool engine,bool fuel,bool wings,bool reactors,
     }
 }
 bool Vehicle::isTricycle(int wheels,bool engine, bool fuel,bool reactor,bool wings,bool undercarriage,bool locomotive,int wagons,bool kit){
-    if (wheels = 3 && engine == false && fuel == false && wings == false && reactor == false && undercarriage == false && locomotive == false && wagons == 0 && kit == false){
+    if (wheels == 3 && engine == false && fuel == false && wings == false && reactor == false && undercarriage == false && locomotive == false && wagons == 0 && kit == false){
         return true;
     } else {
         return false;
@@ -86,3 +90,36 @@ bool Vehicle::getWings(){
 bool Vehicle::getReactor(){
     return Vehicle::reactor;
 }
+
+void Vehicle::IncorrectInformation(){
+     QMessageBox errorMessage;
+     errorMessage.setText("The information is incorrect, repeat please");
+     errorMessage.exec();
+
+} // informacion erronea
+
+
+// make a registration
+std::string Vehicle::makeRegistration(){
+    srand(time(NULL));
+    std::string registerNumber;
+    for(int j=0; j<4; j++){
+      registerNumber.push_back((rand()%10+48)); //48 es cero en ASCII
+    }
+
+    char letter;
+    std::string letterRegistration;
+    for(int i=0; i<3; i++){
+    letter = rand()%26+65;
+        while(letter=='A' || letter=='E' || letter=='I' || letter=='O' || letter=='U'){
+            letter = rand()%26+65;
+        }
+    letterRegistration.push_back(letter);
+    }
+
+    std::string registration = registerNumber + letterRegistration;
+    return registration;
+}
+
+
+

@@ -6,7 +6,7 @@ class Vehicle
 {
 public:
     Vehicle();
-    Vehicle(std::string name,int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,bool wagon,int numWagon,bool spareWheel,std::string registration);
+    Vehicle(int nWheels,bool engine,int engineCV,bool fuel,char fuelType,std::string color,bool wings,bool reactor,bool undercarriage,bool locomotive,bool wagon,int numWagon,bool spareWheel,std::string registration);
 
     /*vehicle::name = name;
     vehicle::nWheels = nWheels;
@@ -44,6 +44,8 @@ public:
     bool isAPlane(int, bool, int, bool, char, std::string, bool, bool, bool, bool, int, bool);
     bool isABike(int,bool,bool,bool,bool,bool,int,bool);
     bool isTricycle(int,bool, bool,bool,bool,bool,bool,int,bool);
+    void IncorrectInformation(); // informacion erronea
+    std::string makeRegistration(); // matricula
 
 private:
     std::string type;
