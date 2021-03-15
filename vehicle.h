@@ -46,7 +46,7 @@ public:
     bool isTricycle(int,bool, bool,bool,bool,bool,bool,int,bool);
     bool isTrain();
     void IncorrectInformation(); // informacion erronea
-    std::string makeRegistration(); // matricula
+    
 
 private:
     std::string type;
