@@ -16,6 +16,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->cvvLine->setDisabled(true);
     ui->fueltypeLine->setDisabled(true);
+    ui->wagonNumberLine->setDisabled(true);
+
 
 }
 
@@ -168,4 +170,12 @@ void MainWindow::on_pushButton_recoverVehicle_released()
         }
 
 
+}
+void MainWindow::on_wagonCheckLine_toggled(bool checked){
+    if(checked){
+        ui->wagonNumberLine->setDisabled(false);
+    }else{
+        ui->wagonNumberLine->setDisabled(true);
+
+    }
 }

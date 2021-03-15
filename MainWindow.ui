@@ -19,7 +19,7 @@
      <rect>
       <x>540</x>
       <y>390</y>
-      <width>131</width>
+      <width>91</width>
       <height>21</height>
      </rect>
     </property>
@@ -30,7 +30,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Nº de vagones</string>
+     <string>Nº of wagons</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="locomotiveCheckLine">

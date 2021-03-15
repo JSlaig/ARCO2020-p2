@@ -31,6 +31,8 @@ private slots:
 
     void on_pushButton_recoverVehicle_released();
 
+    void on_wagonCheckLine_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;   
     Vehicle vehicle;
