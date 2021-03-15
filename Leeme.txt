@@ -1,0 +1,7 @@
+Pasos a seguir (Linux):
+Abrir una Shell.
+Cuando se llegue al directorio de trabajo donde esta la practica
+En la shell escribimos la siguiente instrucción: qmake Assigment2.pro
+A continuacion, introducimos la sentencia make,
+y por ultimo, para ejecutar là practica escribimos la sentencia ./Assigment2
+
