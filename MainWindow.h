@@ -29,6 +29,10 @@ private slots:
 
     void on_pushButton_createVehicle_released();
 
+    void on_engineCheckLine_toggled(bool checked);
+
+    void on_fuelCheckLine_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;   
     Vehicle vehicle;

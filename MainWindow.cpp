@@ -11,7 +11,10 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
     ui->setupUi(this);
+    ui->cvvLine->setDisabled(true);
+    ui->fueltypeLine->setDisabled(true);
 
 }
 
@@ -87,6 +90,7 @@ void MainWindow::on_pushButton_createVehicle_released()
     bool locomotive = ui->locomotiveCheckLine->checkState();
     bool engine = ui->engineCheckLine->checkState();
     int cvv = ui->cvvLine->text().toInt();
+
     bool fuel = ui->fuelCheckLine->checkState();
     std::string fuelType = ui->fueltypeLine->currentText().toStdString();
     bool wagons = ui->wagonCheckLine->checkState();
@@ -103,4 +107,22 @@ void MainWindow::on_pushButton_createVehicle_released()
     ui->vehiculosCreados_lineEdit->setText(QNVehicles);
     fillComboBox();
     resetWindow();
+}
+
+void MainWindow::on_engineCheckLine_toggled(bool checked)
+{
+    if(checked){
+        ui->cvvLine->setDisabled(false);
+    }else{
+        ui->cvvLine->setDisabled(true);
+        ui->cvvLine->setValue(80);
+    }
+}
+void MainWindow::on_fuelCheckLine_toggled(bool checked)
+{
+    if(checked){
+        ui->fueltypeLine->setDisabled(false);
+    }else{
+        ui->fueltypeLine->setDisabled(true);
+    }
 }

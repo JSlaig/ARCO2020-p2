@@ -11,12 +11,10 @@ CONFIG += c++11
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    newvehicle.cpp \
     vehicle.cpp
 
 HEADERS += \
     mainwindow.h \
-    newvehicle.h \
     vehicle.h
 
 FORMS += \
