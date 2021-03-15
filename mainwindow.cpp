@@ -88,6 +88,10 @@ void MainWindow::on_pushButton_createVehicle_clicked()
     bool reactors = ui->checkBox_Reactor->checkState();
     bool wings = ui->checkBox_Wings->checkState();
     int sizeList = listaVehiculos.size();
+    bool fuel = ui->checkBox_Combustible->checkState();
+    std::string fuelType = ui->comboBox_Combustible->currentText().toStdString();
+    std::string matricula = ui->label_matricula->text().toStdString();
+
     // Cuando tengamos todos los datos, descomentar y completar la linea siguiente.
    // listaVehiculos.push_back(Vehiculo(atributos de vehiculo)
     //int numberVehicles = ++sizeList;
@@ -117,6 +121,9 @@ void MainWindow::resetWindow(){
     ui->comboBox_Colour->setCurrentIndex(0);
     ui->checkBox_Wings->setChecked(false);
     ui->checkBox_Reactor->setChecked(false);
+    ui->comboBox_Combustible->setCurrentIndex(0);
+    ui->comboBox_Combustible->setEnabled(false);
+    ui->checkBox_Combustible->setChecked(false);
 }
 
 void MainWindow::on_checkBox_Reactors_clicked()
@@ -130,7 +137,33 @@ void MainWindow::on_checkBox_Combustible_toggled(bool checked)
         ui->comboBox_Combustible->setEnabled(true);
         newVehicle.setFuel(true);
     }else{
+        ui->comboBox_Combustible->setCurrentIndex(0);
         ui->comboBox_Combustible->setEnabled(false);
         newVehicle.setFuel(false);
     }
+}
+
+void MainWindow::on_pushButton_Matricula_clicked()
+{
+    srand(time(NULL));
+    std::string registerNumber;
+    char letter;
+    for(int i = 0; i<=3;i++){
+       registerNumber.push_back((rand()%10+48));
+    }
+    registerNumber.push_back('-');
+
+    for(int i = 0; i<=2;i++){
+        letter = (rand()%26+65);
+        while(letter=='A'||letter=='E'||letter=='I'||letter=='O'||letter=='U'||letter=='a'||letter=='e'||letter=='i'||letter=='o'||letter=='u'){
+            letter = (rand()%26+65);
+        }
+        registerNumber.push_back(letter);
+    }
+    QString str = QString::fromUtf8(registerNumber.data(),registerNumber.size());
+    ui->label_matricula->setText(str);
+}
+void MainWindow::on_pushButton_Matricula_released()
+{
+
 }

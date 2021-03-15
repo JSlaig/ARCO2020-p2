@@ -38,6 +38,10 @@ private slots:
 
     void on_checkBox_Reactors_clicked();
 
+    void on_pushButton_Matricula_clicked();
+
+    void on_pushButton_Matricula_released();
+
 private:
     Ui::MainWindow *ui;
     newVehicle newVehicle;

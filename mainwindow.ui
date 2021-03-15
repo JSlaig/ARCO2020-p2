@@ -414,13 +414,18 @@
      <rect>
       <x>190</x>
       <y>420</y>
-      <width>71</width>
+      <width>91</width>
       <height>20</height>
      </rect>
     </property>
     <property name="currentText">
-     <string>Gasolina</string>
+     <string>---default---</string>
     </property>
+    <item>
+     <property name="text">
+      <string>---default---</string>
+     </property>
+    </item>
     <item>
      <property name="text">
       <string>Gasolina</string>
@@ -458,6 +463,35 @@
     </property>
     <property name="text">
      <string>Tipo de combustible</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_matricula">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>460</y>
+      <width>61</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0000-BBB</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Matricula">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>420</y>
+      <width>75</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Matrícula</string>
     </property>
    </widget>
   </widget>
