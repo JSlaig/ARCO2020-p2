@@ -149,9 +149,10 @@ void MainWindow::on_engineCheckLine_toggled(bool checked)
 {
     if(checked){
         ui->cvvLine->setDisabled(false);
+        ui->cvvLine->setText("80");
     }else{
         ui->cvvLine->setDisabled(true);
-        ui->cvvLine->setText("80");
+        ui->cvvLine->setText("");
     }
 }
 void MainWindow::on_fuelCheckLine_toggled(bool checked)

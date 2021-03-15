@@ -38,6 +38,10 @@ Vehicle::registration = registration;
       Vehicle::type = "Tricycle";
   } else if(isTrain()){
       Vehicle::type="Train";
+  }else if(isACar()){
+      Vehicle::type="Car";
+  }else if(isAMotorBike()){
+      Vehicle::type="MotorBike";
   }
   
   
@@ -93,6 +97,22 @@ bool Vehicle::isTrain(){
         return false;
     }
 }
+bool Vehicle::isACar(){
+    if(Vehicle::nWheels == 4 && Vehicle::engine == true &&Vehicle::engineCV >= 80 && Vehicle::engineCV <= 250 && (Vehicle::fuelType == 'e' || Vehicle::fuelType == 'g' || Vehicle::fuelType == 'd' || Vehicle::fuelType == 'h') && Vehicle::wings == false && Vehicle::locomotive == false && Vehicle::wagon == false && Vehicle::undercarriage == false && Vehicle::reactor == false && Vehicle::spareWheel == true){
+        return true;
+    }else
+        return false;
+}
+
+bool Vehicle::isAMotorBike(){
+
+    if(Vehicle::nWheels == 2 && Vehicle::engine == true && Vehicle::engineCV >= 80 && Vehicle::engineCV <=450 && (Vehicle::fuelType == 'e' || Vehicle::fuelType == 'g' || Vehicle::fuelType == 'd' || Vehicle::fuelType == 'h') && Vehicle::wings == false && Vehicle::locomotive == false && Vehicle::wagon == false && Vehicle::undercarriage == false && Vehicle::reactor == false && Vehicle::spareWheel == true){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 std::string Vehicle::getColor(){
     return Vehicle::color;
 }

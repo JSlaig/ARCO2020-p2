@@ -30,6 +30,8 @@ public:
     bool isABike(int,bool,bool,bool,bool,bool,int,bool);
     bool isTricycle(int,bool, bool,bool,bool,bool,bool,int,bool);
     bool isTrain();
+    bool isACar();
+    bool isAMotorBike();
     void toString();
     void IncorrectInformation(); // informacion erronea
     

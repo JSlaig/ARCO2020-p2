@@ -69,7 +69,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Vagones</string>
+     <string>Wagons</string>
     </property>
    </widget>
    <widget class="QLabel" name="LabelTitle">
