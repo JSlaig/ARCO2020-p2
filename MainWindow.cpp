@@ -24,21 +24,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-/*Acction listener Boton de prueba*/
-void MainWindow::on_pushButton_released()
-{
-
-}
-
-
-//==========================
-
-
-void MainWindow::on_BotonPrueba_clicked()
-{
-    std::cout << "Locomotora seteada como true" << std::endl;
-
-}
 void MainWindow::fillComboBox(){
     ui->comboBox_listVehicles->clear();
     int quantity = listaVehiculos.size();

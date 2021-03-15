@@ -21,10 +21,6 @@ public:
 
 private slots:
 
-    void on_pushButton_released();
-
-    void on_BotonPrueba_clicked();
-
     void on_pushButton_Matricula_released();
 
     void on_pushButton_createVehicle_released();
