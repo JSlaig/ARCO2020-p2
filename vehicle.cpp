@@ -33,6 +33,10 @@ Vehicle::registration = registration;
     Vehicle::type = "Bike";
   } else if (isTricycle(nWheels,engine,fuel,reactor,wings,undercarriage,locomotive,wagon,spareWheel)){
       Vehicle::type = "Tricycle";
+  }else if(isACar()){
+      Vehicle::type = "Car";
+  }else if(isAMotorBike()){
+      Vehicle::type = "MotorBike";
   }
   
   
@@ -84,6 +88,22 @@ bool Vehicle::isTricycle(int wheels,bool engine, bool fuel,bool reactor,bool win
 }
 bool Vehicle::isTrain(){
     if(Vehicle::nWheels==40&&Vehicle::engineCV==450&&(Vehicle::fuelType == 'e'||Vehicle::fuelType == 'd')&&Vehicle::color.compare("Black")&&Vehicle::wings == false&&Vehicle::reactor == false && Vehicle::undercarriage == false && Vehicle::locomotive == true && (Vehicle::numWagon>=5&&Vehicle::numWagon<=20) && Vehicle::spareWheel){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+bool Vehicle::isACar(){
+    if(Vehicle::nWheels == 4 && Vehicle::engine == true &&Vehicle::engineCV >= 80 && Vehicle::engineCV <= 250 && (Vehicle::fuelType == 'e' || Vehicle::fuelType == 'g' || Vehicle::fuelType == 'd' || Vehicle::fuelType == 'h') && Vehicle::wings == false && Vehicle::locomotive == false && Vehicle::wagon == false && Vehicle::undercarriage == false && Vehicle::reactor == false && Vehicle::spareWheel == true){
+        return true;
+    }else
+        return false;
+}
+
+bool Vehicle::isAMotorBike(){
+
+    if(Vehicle::nWheels == 2 && Vehicle::engine == true && Vehicle::engineCV >= 80 && Vehicle::engineCV <=450 && (Vehicle::fuelType == 'e' || Vehicle::fuelType == 'g' || Vehicle::fuelType == 'd' || Vehicle::fuelType == 'h') && Vehicle::wings == false && Vehicle::locomotive == false && Vehicle::wagon == false && Vehicle::undercarriage == false && Vehicle::reactor == false && Vehicle::spareWheel == true){
         return true;
     }else{
         return false;

@@ -12,6 +12,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->lineEditnumVagones->setDisabled(true);
+    ui->lineEditnumVagones->setText("0");
+    ui->comboBox_Combustible->setDisabled(true);
 
 }
 
@@ -21,65 +24,11 @@ MainWindow::~MainWindow()
 }
 
 /*Acction listener Boton de prueba*/
-void MainWindow::on_pushButton_released()
-{
 
-}
 
 
 //==========================
 
-
-void MainWindow::on_BotonPrueba_clicked()
-{
-    std::cout << "Locomotora seteada como true" << std::endl;
-
-}
-
-
-
-void MainWindow::on_checkBox_Locomotora_toggled(bool checked)
-{
-    if(checked){
-
-        std::cout << "Locomotora seteada como true" << std::endl;
-        newVehicle.setLocomotive(true);
-
-    }else{
-
-        std::cout << "Locomotora seteada como false" << std::endl;
-        newVehicle.setLocomotive(false);
-    }
-}
-
-void MainWindow::on_checkBox_Vagones_toggled(bool checked)
-{
-    bool vagones;
-    if(checked){
-
-        std::cout << "Vagones seteado como true" << std::endl;
-        vagones = true;
-
-    }else{
-
-        std::cout << "Vagones seteado como false" << std::endl;
-        vagones = false;
-    }
-}
-
-void MainWindow::on_checkBox_TrenAterrizaje_toggled(bool checked)
-{
-    if(checked){
-
-        std::cout << "Tren aterrizaje seteadao como true" << std::endl;
-        newVehicle.setUndercarriage(true);
-
-    }else{
-
-        std::cout << "Tren aterrizaje seteado como false" << std::endl;
-        newVehicle.setUndercarriage(false);
-    }
-}
 
 void MainWindow::on_pushButton_createVehicle_clicked()
 {
@@ -92,16 +41,15 @@ void MainWindow::on_pushButton_createVehicle_clicked()
     std::string fuelType = ui->comboBox_Combustible->currentText().toStdString();
     std::string matricula = ui->label_matricula->text().toStdString();
 
+    newVehicle.setNumWagon(ui->lineEditnumVagones->text().toInt());
     // Cuando tengamos todos los datos, descomentar y completar la linea siguiente.
    // listaVehiculos.push_back(Vehiculo(atributos de vehiculo)
     //int numberVehicles = ++sizeList;
+
      QString QNVehicles = QString::fromStdString(static_cast<std::ostringstream*>(&(std::ostringstream() << ++sizeList))->str());
     ui->vehiculosCreados_lineEdit->setText(QNVehicles);
     fillComboBox();
     resetWindow();
-
-
-
 
 
 
@@ -166,4 +114,54 @@ void MainWindow::on_pushButton_Matricula_clicked()
 void MainWindow::on_pushButton_Matricula_released()
 {
 
+}
+
+void MainWindow::on_checkBox_wagons_toggled(bool checked)
+{
+
+        if(checked){
+
+            std::cout << "Vagones seteado como true" << std::endl;
+            //bool wagon;
+            //int numWagon;
+            newVehicle.setWagon(true);
+            ui->lineEditnumVagones->setDisabled(false);
+            ui->lineEditnumVagones->setText("5");
+
+        }else{
+
+            std::cout << "Vagones seteado como false" << std::endl;
+            newVehicle.setWagon(false);
+            ui->lineEditnumVagones->setDisabled(true);
+            ui->lineEditnumVagones->setText("0");
+        }
+
+}
+
+void MainWindow::on_checkBox_Locomotive_toggled(bool checked)
+{
+        if(checked){
+
+            std::cout << "Locomotora seteada como true" << std::endl;
+            newVehicle.setLocomotive(true);
+
+        }else{
+
+            std::cout << "Locomotora seteada como false" << std::endl;
+            newVehicle.setLocomotive(false);
+        }
+}
+
+void MainWindow::on_checkBox_Undercarriage_toggled(bool checked)
+{
+        if(checked){
+
+            std::cout << "Tren aterrizaje seteadao como true" << std::endl;
+            newVehicle.setUndercarriage(true);
+
+        }else{
+
+            std::cout << "Tren aterrizaje seteado como false" << std::endl;
+            newVehicle.setUndercarriage(false);
+        }
 }

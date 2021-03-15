@@ -14,32 +14,6 @@
    <string>Vehicle configurator</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="BotonPrueba">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>430</y>
-      <width>80</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>BotonPRueba</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>650</x>
-      <y>430</y>
-      <width>80</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="lineEditnumVagones">
     <property name="geometry">
      <rect>
@@ -79,7 +53,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Locomotora</string>
+     <string>Locomotive</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="checkBox_Undercarriage">
@@ -92,7 +66,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Tren de aterrizaje</string>
+     <string>Undercarriage</string>
     </property>
    </widget>
    <widget class="QCheckBox" name="checkBox_wagons">
@@ -105,7 +79,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Vagones</string>
+     <string>Wagons</string>
     </property>
    </widget>
    <widget class="QLabel" name="LabelTitle">

@@ -21,17 +21,6 @@ public:
 
 private slots:
 
-    void on_pushButton_released();
-
-    void on_BotonPrueba_clicked();
-
-
-    void on_checkBox_Locomotora_toggled(bool checked);
-
-    void on_checkBox_Vagones_toggled(bool checked);
-
-    void on_checkBox_TrenAterrizaje_toggled(bool checked);
-
     void on_checkBox_Combustible_toggled(bool checked);
 
     void on_pushButton_createVehicle_clicked();
@@ -41,6 +30,12 @@ private slots:
     void on_pushButton_Matricula_clicked();
 
     void on_pushButton_Matricula_released();
+
+    void on_checkBox_wagons_toggled(bool checked);
+
+    void on_checkBox_Locomotive_toggled(bool checked);
+
+    void on_checkBox_Undercarriage_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;
