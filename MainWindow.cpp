@@ -108,9 +108,18 @@ void MainWindow::on_pushButton_createVehicle_released()
     bool wagons = ui->wagonCheckLine->checkState();
     int wagonNumber = ui->wagonNumberLine->value();
     std::string registration = ui->registrationLine->text().toStdString();
+     Vehicle vehicle = Vehicle(name, wheelNumber, engine, cvv, fuel, fuelType, color, wings, reactors, undercarriage, locomotive, wagons, wagonNumber, wheelKit, registration);
+     if(vehicle.isASportsCar(wheelNumber, engine, cvv, fuel, fuelType, wings, reactors, undercarriage, locomotive, wagons, wheelKit) == false
+             && vehicle.isAPlane(wheelNumber, engine, cvv, fuel, fuelType, color, wings, reactors, undercarriage, locomotive, wagons, wheelKit) == false
+             && vehicle.isABike(wheelNumber,engine,fuel,wings,reactors,locomotive,wagons,wheelKit) == false
+             && vehicle.isTricycle(wheelNumber,engine,fuel,reactors,wings,undercarriage,locomotive,wagons,wheelKit) ==false
+             && vehicle.isTrain() == false
+             && vehicle.isAMotorBike() == false
+             && vehicle.isACar() == false || name == "")
 
+             {
     // Cuando tengamos todos los datos, descomentar y completar la linea siguiente.
-    if (name==""){
+
         QMessageBox mensaje;
                  mensaje.setText("Data Information incomplete");
                  mensaje.exec();
