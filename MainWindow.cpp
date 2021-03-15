@@ -77,7 +77,7 @@ void MainWindow::on_pushButton_Matricula_released()
 //Boton de creacion de vehiculo, se toma valor a todos los campos
 void MainWindow::on_pushButton_createVehicle_released()
 {
-    //std::string name = ui->nameLine->currentText().toStdString();
+    std::string name = ui->nameLine->text().toStdString();
     int wheelNumber = ui->wheelNumberLine->value();
     std::string wheelKit = ui->wheelKitLine->currentText().toStdString();
     std::string color = ui->colorLine->currentText().toStdString();
@@ -86,7 +86,7 @@ void MainWindow::on_pushButton_createVehicle_released()
     bool reactors = ui->reactorCheckLine->checkState();
     bool locomotive = ui->locomotiveCheckLine->checkState();
     bool engine = ui->engineCheckLine->checkState();
-    //int cvv = ui->cvvLine->value();
+    int cvv = ui->cvvLine->text().toInt();
     bool fuel = ui->fuelCheckLine->checkState();
     std::string fuelType = ui->fueltypeLine->currentText().toStdString();
     bool wagons = ui->wagonCheckLine->checkState();
