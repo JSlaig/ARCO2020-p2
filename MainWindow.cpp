@@ -1,5 +1,5 @@
 #include "MainWindow.h"
-#include "ui_mainwindow.h"
+#include "ui_MainWindow.h"
 #include <iostream>
 #include "Vehicle.h"
 #include <QInputDialog>
@@ -81,7 +81,7 @@ void MainWindow::on_pushButton_Matricula_released()
 void MainWindow::on_pushButton_createVehicle_released()
 {
     std::string name = ui->nameLine->text().toStdString();
-    int wheelNumber = ui->wheelNumberLine->value();
+    int wheelNumber = ui->wheelNumber->currentText().toInt();
     std::string wheelKit = ui->wheelKitLine->currentText().toStdString();
     std::string color = ui->colorLine->currentText().toStdString();
     bool wings = ui->wingsCheckLine->checkState();
@@ -115,7 +115,7 @@ void MainWindow::on_engineCheckLine_toggled(bool checked)
         ui->cvvLine->setDisabled(false);
     }else{
         ui->cvvLine->setDisabled(true);
-        ui->cvvLine->setValue(80);
+        ui->cvvLine->setText("80");
     }
 }
 void MainWindow::on_fuelCheckLine_toggled(bool checked)

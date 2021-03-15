@@ -1,5 +1,5 @@
-#include "mainwindow.h"
-#include "vehicle.h"
+#include "MainWindow.h"
+#include "Vehicle.h"
 
 
 #include <QApplication>
