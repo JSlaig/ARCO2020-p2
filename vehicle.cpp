@@ -110,27 +110,3 @@ void Vehicle::IncorrectInformation(){
 } // informacion erronea
 
 
-// make a registration
-std::string Vehicle::makeRegistration(){
-    srand(time(NULL));
-    std::string registerNumber;
-    for(int j=0; j<4; j++){
-      registerNumber.push_back((rand()%10+48)); //48 es cero en ASCII
-    }
-
-    char letter;
-    std::string letterRegistration;
-    for(int i=0; i<3; i++){
-    letter = rand()%26+65;
-        while(letter=='A' || letter=='E' || letter=='I' || letter=='O' || letter=='U'){
-            letter = rand()%26+65;
-        }
-    letterRegistration.push_back(letter);
-    }
-
-    std::string registration = registerNumber + letterRegistration;
-    return registration;
-}
-
-
-
