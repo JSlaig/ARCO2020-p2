@@ -408,7 +408,7 @@
     </item>
     <item>
      <property name="text">
-      <string>Gasolina</string>
+      <string>Gasoline</string>
      </property>
     </item>
     <item>
@@ -418,17 +418,17 @@
     </item>
     <item>
      <property name="text">
-      <string>Eléctrico</string>
+      <string>Electric</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Híbrido</string>
+      <string>Hibrid</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Queroseno</string>
+      <string>Querosene</string>
      </property>
     </item>
    </widget>

@@ -82,7 +82,15 @@ void MainWindow::on_pushButton_createVehicle_released()
 {
     std::string name = ui->nameLine->text().toStdString();
     int wheelNumber = ui->wheelNumber->currentText().toInt();
-    std::string wheelKit = ui->wheelKitLine->currentText().toStdString();
+
+    std::string wheelKitS = ui->wheelKitLine->currentText().toStdString();
+    bool wheelKit;
+    if(wheelKitS.compare("Spare Wheel") == 0){
+        wheelKit = true;
+    }else{
+        wheelKit = false;
+    }
+
     std::string color = ui->colorLine->currentText().toStdString();
     bool wings = ui->wingsCheckLine->checkState();
     bool undercarriage = ui->undercarriageCheckLine->checkState();
@@ -92,18 +100,32 @@ void MainWindow::on_pushButton_createVehicle_released()
     int cvv = ui->cvvLine->text().toInt();
 
     bool fuel = ui->fuelCheckLine->checkState();
-    std::string fuelType = ui->fueltypeLine->currentText().toStdString();
+    std::string fuelTypeS = ui->fueltypeLine->currentText().toStdString();
+    char fuelType;
+    if(fuelTypeS.compare("Gasoline") == 0){
+        fuelType = 'g';
+    }else if(fuelTypeS.compare("Electric") == 0){
+        fuelType = 'e';
+    }else if(fuelTypeS.compare("Querosene") == 0){
+        fuelType = 'q';
+    }else if(fuelTypeS.compare("Diesel") == 0){
+        fuelType = 'd';
+    }else if(fuelTypeS.compare("Hibrid") == 0){
+        fuelType = 'h';
+    }else{
+        fuelType = 'x';
+    }
     bool wagons = ui->wagonCheckLine->checkState();
     int wagonNumber = ui->wagonNumberLine->value();
     std::string registration = ui->registrationLine->text().toStdString();
 
-
-
-    int sizeList = listaVehiculos.size();
     // Cuando tengamos todos los datos, descomentar y completar la linea siguiente.
-   // listaVehiculos.push_back(Vehiculo(atributos de vehiculo)
+    listaVehiculos.push_back(Vehicle(name, wheelNumber, engine, cvv, fuel, fuelType, color, wings, reactors, undercarriage, locomotive, wagons, wagonNumber, wheelKit, registration));
+
+    int sizeList = listaVehiculos.size();    
+
     //int numberVehicles = ++sizeList;
-     QString QNVehicles = QString::fromStdString(static_cast<std::ostringstream*>(&(std::ostringstream() << ++sizeList))->str());
+    QString QNVehicles = QString::fromStdString(static_cast<std::ostringstream*>(&(std::ostringstream() << ++sizeList))->str());
     ui->vehiculosCreados_lineEdit->setText(QNVehicles);
     fillComboBox();
     resetWindow();
