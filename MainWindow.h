@@ -33,6 +33,8 @@ private slots:
 
     void on_fuelCheckLine_toggled(bool checked);
 
+    void on_pushButton_recoverVehicle_released();
+
 private:
     Ui::MainWindow *ui;   
     Vehicle vehicle;

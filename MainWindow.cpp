@@ -5,6 +5,7 @@
 #include <QInputDialog>
 #include <QMessageBox>
 #include <sstream>
+#define NULL 0
 #define STRING(num) #num
 
 MainWindow::MainWindow(QWidget *parent)
@@ -52,9 +53,13 @@ void MainWindow::resetWindow(){
     ui->colorLine->setCurrentIndex(0);
     ui->wingsCheckLine->setChecked(false);
     ui->reactorCheckLine->setChecked(false);
-    //ui->cvvLine->setCurrentIndex(0);
+    ui->cvvLine->setText("");
+    ui->engineCheckLine->setChecked(false);
     ui->fueltypeLine->setEnabled(false);
     ui->fuelCheckLine->setChecked(false);
+    ui->undercarriageCheckLine->setChecked(false);
+
+
 }
 void MainWindow::on_pushButton_Matricula_released()
 {
@@ -120,17 +125,26 @@ void MainWindow::on_pushButton_createVehicle_released()
     std::string registration = ui->registrationLine->text().toStdString();
 
     // Cuando tengamos todos los datos, descomentar y completar la linea siguiente.
+    if (name==""){
+        QMessageBox mensaje;
+                 mensaje.setText("Data Information incomplete");
+                 mensaje.exec();
+            }
+
+     else {
+
     listaVehiculos.push_back(Vehicle(name, wheelNumber, engine, cvv, fuel, fuelType, color, wings, reactors, undercarriage, locomotive, wagons, wagonNumber, wheelKit, registration));
 
     int sizeList = listaVehiculos.size();    
 
     //int numberVehicles = ++sizeList;
-    QString QNVehicles = QString::fromStdString(static_cast<std::ostringstream*>(&(std::ostringstream() << ++sizeList))->str());
+    QString QNVehicles = QString::fromStdString(static_cast<std::ostringstream*>(&(std::ostringstream() << sizeList++))->str());
     ui->vehiculosCreados_lineEdit->setText(QNVehicles);
     fillComboBox();
+
+}
     resetWindow();
 }
-
 void MainWindow::on_engineCheckLine_toggled(bool checked)
 {
     if(checked){
@@ -147,4 +161,16 @@ void MainWindow::on_fuelCheckLine_toggled(bool checked)
     }else{
         ui->fueltypeLine->setDisabled(true);
     }
+}
+
+void MainWindow::on_pushButton_recoverVehicle_released()
+{   if(ui->comboBox_listVehicles->currentText() !=NULL){
+         listaVehiculos[ui->comboBox_listVehicles->currentIndex()].toString();
+       } else {
+            QMessageBox mensaje;
+            mensaje.setText("Don`t exist vehicles");
+            mensaje.exec();
+        }
+
+
 }

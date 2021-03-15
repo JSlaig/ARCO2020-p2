@@ -1,8 +1,11 @@
 #include "Vehicle.h"
 #include"iostream"
 #include<string>
-
+#include <stdlib.h>
+#include <time.h>
 #include <QMessageBox>
+#include <sstream>
+
 
 
 Vehicle::Vehicle(){
@@ -26,20 +29,21 @@ Vehicle:: spareWheel = spareWheel;
 Vehicle::registration = registration;
   
   if(isASportsCar(nWheels, engine, engineCV, fuel, fuelType, wings, reactor, undercarriage, locomotive, wagon, spareWheel) == true){
-          Vehicle::type = "sportscar";
+          Vehicle::type = "Sportscar";
   }else if(isAPlane(nWheels, engine, engineCV, fuel, fuelType, color, wings, reactor, undercarriage, locomotive, wagon, spareWheel) == true){
-          Vehicle::type = "plane";
+          Vehicle::type = "Plane";
   }else if (isABike(nWheels,engine,fuel,wings,reactor,locomotive,wagon,spareWheel)){
     Vehicle::type = "Bike";
   } else if (isTricycle(nWheels,engine,fuel,reactor,wings,undercarriage,locomotive,wagon,spareWheel)){
       Vehicle::type = "Tricycle";
+  } else if(isTrain()){
+      Vehicle::type="Train";
   }
   
   
   
   else{
-          //Caso de mostrar alerta(se puede comprobar el tipo del objeto y si es este crear la ventana y borrar el obj por ejemplo)
-         //Vehicle::type = "Wrong type";
+
          IncorrectInformation();
   }
 
@@ -108,5 +112,81 @@ void Vehicle::IncorrectInformation(){
      errorMessage.exec();
 
 } // informacion erronea
+
+void Vehicle::toString(){
+    //void Vehiculo::toString(){
+        std::string SName = "Name: " + this->name + "\r\n";
+
+        std::string SWheels = static_cast<std::ostringstream*>(&(std::ostringstream() << nWheels))->str();
+        std::string SNumWheels = "Wheels Number: " + SWheels + "\r\n";
+        std::string CV = static_cast<std::ostringstream*>(&(std::ostringstream() << engineCV ))->str();
+        std::string SCV = "Engine CV: " + CV + "\r\n";
+        std::string SNFuel;
+        if(!fuel){
+            SNFuel = "No";
+        }else{
+            SNFuel = "Yes";
+        }
+        std::string SFuel = "Fuel: " + SNFuel + "\r\n";
+        std::string s;
+           s.append(1, fuelType);
+        std::string SFuelType = "Fuel Type: " + s + "\r\n";
+        std::string SColor = "Color: " + color + "\r\n";
+        std::string SNWings;
+        if(!wings){
+            SNWings = "No";
+        }else{
+            SNWings = "Yes";
+        }
+        std::string SWings = "Wings: " + SNWings+ "\r\n";
+        std::string SNReactor;
+        if(!reactor){
+            SNReactor = "No";
+        }else{
+            SNReactor = "Yes";
+        }
+        std::string SReactor = "Reactors: " + SNReactor + "\r\n";
+        std::string SNUnderCarriage;
+        if(!undercarriage){
+            SNUnderCarriage = "No";
+        }else{
+            SNUnderCarriage = "Yes";
+        }
+        std::string SUnderCarriage = "UnderCarriage: " + SNUnderCarriage + "\r\n";
+        std::string SNLocomotive;
+        if(!locomotive){
+            SNLocomotive = "No";
+        }else{
+            SNLocomotive = "Yes";
+        }
+        std::string SLocomotive = "Locomotive: " + SNLocomotive + "\r\n";
+        std::string SNWagon;
+        if(!wagon){
+            SNWagon = "No";
+        }else{
+            SNWagon = "Yes";
+        }
+        std::string SWagons = "Wagons: " + SNWagon + "\r\n";
+        std::string NumWagons = static_cast<std::ostringstream*>(&(std::ostringstream() << numWagon))->str();
+        std::string SNumWagons = "Wagons Number: " + NumWagons + "\r\n";
+        std::string SNKit;
+        if(spareWheel){
+            SNKit = "Si";
+        }else{
+            SNKit = "No";
+        }
+        std::string SKit = "spareWheel: " + SNKit + "\r\n";
+        std::string SType =  "Type: " + type + "\r\n";
+        std::string SSRegistration = "Registration: " + registration + "\r\n";
+
+        std::string message = SName + SNumWheels + SCV + SFuel + SFuelType + SColor + SWings + SReactor + SUnderCarriage + SLocomotive + SWagons + SNumWagons + SKit + SType + SSRegistration;
+
+        QMessageBox mensajeBox;
+        // QMessageBox::information("HolaMundo,");
+         mensajeBox.setText(QString::fromStdString(message));
+         mensajeBox.exec();
+    }
+
+//}
 
 
