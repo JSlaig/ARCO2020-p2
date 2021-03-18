@@ -50,6 +50,11 @@ void MainWindow::resetWindow(){
 }
 void MainWindow::on_pushButton_Matricula_released()
 {
+
+
+
+
+
     srand(time(NULL));
     std::string registerNumber;
     char letter;
@@ -58,15 +63,27 @@ void MainWindow::on_pushButton_Matricula_released()
     }
     registerNumber.push_back('-');
 
+    if(isAMAGLEV()){
+
+        registerNumber.push_back('T');
+        registerNumber.push_back('R');
+        registerNumber.push_back('A');
+
+    }else{
+
     for(int i = 0; i<=2;i++){
         letter = (rand()%26+65);
         while(letter=='A'||letter=='E'||letter=='I'||letter=='O'||letter=='U'||letter=='a'||letter=='e'||letter=='i'||letter=='o'||letter=='u'){
             letter = (rand()%26+65);
         }
         registerNumber.push_back(letter);
+        }
     }
+
     QString str = QString::fromUtf8(registerNumber.data(),registerNumber.size());
     ui->registrationLine->setText(str);
+
+
 }
 
 //Boton de creacion de vehiculo, se toma valor a todos los campos
@@ -117,7 +134,7 @@ void MainWindow::on_pushButton_createVehicle_released()
              && vehicle.isTricycle(wheelNumber,engine,fuel,reactors,wings,undercarriage,locomotive,wagons,wheelKit) ==false
              && vehicle.isTrain() == false
              && vehicle.isAMotorBike() == false
-             && vehicle.isACar() == false || name == "")
+             && vehicle.isACar() == false || name == "" && vehicle.isAMAGLEV() == false)
 
              {
     // Cuando tengamos todos los datos, descomentar y completar la linea siguiente.
@@ -178,4 +195,53 @@ void MainWindow::on_wagonCheckLine_toggled(bool checked){
         ui->wagonNumberLine->setDisabled(true);
 
     }
+}
+bool MainWindow::isAMAGLEV(){
+    std::string fuelTypeS = ui->fueltypeLine->currentText().toStdString();
+    char fuelType;
+
+    if(fuelTypeS.compare("Gasoline") == 0){
+        fuelType = 'g';
+    }else if(fuelTypeS.compare("Electric") == 0){
+        fuelType = 'e';
+    }else if(fuelTypeS.compare("Querosene") == 0){
+        fuelType = 'q';
+    }else if(fuelTypeS.compare("Diesel") == 0){
+        fuelType = 'd';
+    }else if(fuelTypeS.compare("Hibrid") == 0){
+        fuelType = 'h';
+    }else{
+        fuelType = 'x';
+    }
+
+
+    //======================================
+
+    std::string wheelKitS = ui->wheelKitLine->currentText().toStdString();
+    bool wheelKit;
+
+    if(wheelKitS.compare("Spare Wheel") == 0){
+        wheelKit = true;
+    }else{
+        wheelKit = false;
+    }
+
+    //=============================================================
+
+
+    std::string color = ui->colorLine->currentText().toStdString();
+    bool wings = ui->wingsCheckLine->checkState();
+    bool undercarriage = ui->undercarriageCheckLine->checkState();
+    bool reactors = ui->reactorCheckLine->checkState();
+    bool locomotive = ui->locomotiveCheckLine->checkState();
+    bool engine = ui->engineCheckLine->checkState();
+    int cvv = ui->cvvLine->text().toInt();
+    int wheelNumber = ui->wheelNumber->currentText().toInt();
+
+
+        if(wheelNumber == 0 && cvv==450&&(fuelType == 'e')&&color.compare("Black")&&wings == false&&reactors == false && undercarriage == false && locomotive == true && (ui->wagonNumberLine->value()>=5&&ui->wagonNumberLine->value()<=20) && wheelKit == false){
+            return false;
+        }else{
+            return true;
+        }
 }

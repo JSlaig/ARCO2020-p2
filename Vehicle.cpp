@@ -42,6 +42,8 @@ Vehicle::registration = registration;
       Vehicle::type="Car";
   }else if(isAMotorBike()){
       Vehicle::type="MotorBike";
+  }else if(isAMAGLEV()){
+      Vehicle::type = "MAGLEV";
   }
   
   
@@ -108,6 +110,20 @@ bool Vehicle::isAMotorBike(){
 
     if(Vehicle::nWheels == 2 && Vehicle::engine == true && Vehicle::engineCV >= 80 && Vehicle::engineCV <=450 && (Vehicle::fuelType == 'e' || Vehicle::fuelType == 'g' || Vehicle::fuelType == 'd' || Vehicle::fuelType == 'h') && Vehicle::wings == false && Vehicle::locomotive == false && Vehicle::wagon == false && Vehicle::undercarriage == false && Vehicle::reactor == false && Vehicle::spareWheel == true){
         return true;
+    }else{
+        return false;
+    }
+}
+bool Vehicle::isAMAGLEV(){
+
+
+    if(Vehicle::nWheels==0&&Vehicle::engineCV==450&&(Vehicle::fuelType == 'e')&&Vehicle::color.compare("Black")&&Vehicle::wings == false&&Vehicle::reactor == false && Vehicle::undercarriage == false && Vehicle::locomotive == true && (Vehicle::numWagon>=5&&Vehicle::numWagon<=20) && Vehicle::spareWheel == false){
+
+        if(Vehicle::registration.substr(5).compare("TRA")){
+            return true;
+        }else
+            return false;
+
     }else{
         return false;
     }

@@ -33,7 +33,10 @@ public:
     bool isACar();
     bool isAMotorBike();
     void toString();
-    void IncorrectInformation(); // informacion erronea
+    void IncorrectInformation();
+    bool isAMAGLEV();
+
+    // informacion erronea
     
 
 private:

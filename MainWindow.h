@@ -33,9 +33,11 @@ private slots:
 
     void on_wagonCheckLine_toggled(bool checked);
 
+
 private:
     Ui::MainWindow *ui;   
     Vehicle vehicle;
     std::vector<Vehicle> listaVehiculos;
+    bool isAMAGLEV();
 };
 #endif // MAINWINDOW_H
